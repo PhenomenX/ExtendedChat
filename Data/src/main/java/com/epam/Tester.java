@@ -16,7 +16,7 @@ import com.epam.datalayer.data.User;
 public class Tester {
 
 	/**
-	 * @param args
+	 * Class for test methods of DAO
 	 */
 	public static void main(String[] args) {
 		try {
