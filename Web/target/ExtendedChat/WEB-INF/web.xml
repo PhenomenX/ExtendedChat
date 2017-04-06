@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Chat</display-name>
+  <welcome-file-list>
+    <welcome-file>LoginPage.jsp</welcome-file>
+  </welcome-file-list>
+  <listener>
+        <listener-class>com.epam.pavel_romanenko.j12.SessionListener</listener-class> 
+  </listener>
+  <filter>
+    <filter-name>AllRequestFilter</filter-name>
+    <filter-class>com.epam.pavel_romanenko.j12.AllRequestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AllRequestFilter</filter-name>
+    <url-pattern>/jsp/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>ServletFilter</filter-name>
+    <filter-class>com.epam.pavel_romanenko.j12.ServletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ServletFilter</filter-name>
+    <servlet-name>controller</servlet-name>
+  </filter-mapping>
+  <servlet>
+    <display-name>controller</display-name>
+    <servlet-name>controller</servlet-name>
+    <servlet-class>com.epam.pavel_romanenko.j12.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>controller</servlet-name>
+    <url-pattern>/controller</url-pattern>
+  </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/jsp/error.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.RuntimeException</exception-type>
+    <location>/jsp/error.jsp</location>
+  </error-page>
+</web-app>
