@@ -24,7 +24,7 @@ public class Tester {
 			MessageDAO messageDAO = factory.getMessageDAO();
 			UserDAO userDAO = factory.getUserDAO();
 			User admin = new User("admin");
-//			// sendMessage()
+			// sendMessage()
 //			Timestamp date = Timestamp.valueOf("2016-10-10 12:13:52.0");
 			User newUser = new User("jack", Status.LOGIN, Role.USER);
 //			Message message = new Message(date, newUser, "aloha");
