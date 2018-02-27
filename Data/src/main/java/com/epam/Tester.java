@@ -38,32 +38,32 @@ public class Tester {
 //			System.out.printf("Test of method 'logout'. User"
 //					+ " - %s. Result message:\n%s\n\n", newUser.getName(),
 //					messageDAO.getLast(1));
-			// login()
-			userDAO.logIn(newUser);
-			System.out.printf("Test of method 'login'. User"
-					+ " - %s. Result message:\n%s\n\n", newUser.getName(),
-					messageDAO.getLast(1));
-			// isLogged()
-			User user = new User("nick");
-			boolean isLogged = userDAO.isLogged(user);
-			System.out.printf(
-					"Test of method 'isLogged'. User - %s. Result:\n%s\n\n",
-					user.getName(), isLogged);
-			// isKicked()
-			boolean isKicked = userDAO.isKicked(user);
-			System.out.printf(
-					"Test of method 'isKicked'. User - %s. Result:\n%s\n\n",
-					user.getName(), isKicked);
-			// getRole()
-			System.out.printf(
-					"Test of method 'getRole'. User - %s. Result:\n%s\n\n",
-					newUser.getName(), userDAO.getRole(newUser.getName()));
-
-			// kick()
-			userDAO.kick(admin, newUser);
-			System.out.printf("Test of method 'kick'. User"
-					+ " - %s, Admin - '%s'. Result message:\n%s\n\n",
-					newUser.getName(), admin.getName(), messageDAO.getLast(1));
+//			// login()
+//			userDAO.logIn(newUser);
+//			System.out.printf("Test of method 'login'. User"
+//					+ " - %s. Result message:\n%s\n\n", newUser.getName(),
+//					messageDAO.getLast(1));
+//			// isLogged()
+//			User user = new User("nick");
+//			boolean isLogged = userDAO.isLogged(user);
+//			System.out.printf(
+//					"Test of method 'isLogged'. User - %s. Result:\n%s\n\n",
+//					user.getName(), isLogged);
+//			// isKicked()
+//			boolean isKicked = userDAO.isKicked(user);
+//			System.out.printf(
+//					"Test of method 'isKicked'. User - %s. Result:\n%s\n\n",
+//					user.getName(), isKicked);
+//			// getRole()
+//			System.out.printf(
+//					"Test of method 'getRole'. User - %s. Result:\n%s\n\n",
+//					newUser.getName(), userDAO.getRole(newUser.getName()));
+//
+//			// kick()
+//			userDAO.kick(admin, newUser);
+//			System.out.printf("Test of method 'kick'. User"
+//					+ " - %s, Admin - '%s'. Result message:\n%s\n\n",
+//					newUser.getName(), admin.getName(), messageDAO.getLast(1));
 //			// unKick()
 //			userDAO.unkick(newUser);
 //			System.out.printf("Test of method 'unKick'. User"
@@ -77,12 +77,12 @@ public class Tester {
 //				System.out.println(onlineUser);
 //			}
 			// getLast()
-			int count = 3;
-			List<Message> messages = messageDAO.getLast(count);
-			System.out.printf("\nTest of method 'getLast(%d)':\n", count);
-			for (Message messageLast : messages) {
-				System.out.println(messageLast);
-			}
+//			int count = 3;
+//			List<Message> messages = messageDAO.getLast(count);
+//			System.out.printf("\nTest of method 'getLast(%d)':\n", count);
+//			for (Message messageLast : messages) {
+//				System.out.println(messageLast);
+//			}
 
 		} catch (DBTypeException e) {
 			e.printStackTrace();

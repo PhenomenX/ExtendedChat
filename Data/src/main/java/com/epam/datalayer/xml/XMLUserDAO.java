@@ -9,11 +9,14 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
-
 import com.epam.datalayer.UserDAO;
-import com.epam.datalayer.data.*;
+import com.epam.datalayer.data.Message;
+import com.epam.datalayer.data.Role;
+import com.epam.datalayer.data.Status;
+import com.epam.datalayer.data.User;
+import com.epam.datalayer.data.UserList;
 import com.epam.datalayer.xml.dom.DOMHandler;
-import com.epam.datalayer.xml.sax.*;
+import com.epam.datalayer.xml.sax.SAXHandlerMessage;
 
 public class XMLUserDAO implements UserDAO {
 
@@ -95,7 +98,6 @@ public class XMLUserDAO implements UserDAO {
 
 	@Override
 	public List<User> getAllKicked() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -5,7 +5,9 @@ import javax.servlet.http.HttpSession;
 
 import com.epam.datalayer.DAOFactory;
 import com.epam.datalayer.UserDAO;
-import com.epam.datalayer.data.*;
+import com.epam.datalayer.data.Role;
+import com.epam.datalayer.data.Status;
+import com.epam.datalayer.data.User;
 import com.epam.pavel_romanenko.j12.ConfigurationManager;
 
 public class KickCommand implements ActionCommand {

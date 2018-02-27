@@ -16,8 +16,7 @@ public class OracleDBDAOFactory extends DAOFactory {
 	private OracleDBDAOFactory() {
 	}
 
-	public static OracleDBDAOFactory getInstance()
-			throws ClassNotFoundException, SQLException {
+	public static OracleDBDAOFactory getInstance() throws ClassNotFoundException, SQLException {
 		OracleDBDAOFactory factory = instance;
 		if (instance == null) {
 			synchronized (OracleDBDAOFactory.class) {
@@ -37,8 +36,8 @@ public class OracleDBDAOFactory extends DAOFactory {
 		connection = DriverManager.getConnection(url, user, password);
 		System.out.println("Connected to oracle DB!");
 	}
-	
-	private void disconnected(){
+
+	private void disconnected() {
 		try {
 			connection.close();
 		} catch (SQLException e) {

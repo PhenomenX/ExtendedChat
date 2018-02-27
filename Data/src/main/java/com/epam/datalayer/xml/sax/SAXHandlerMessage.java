@@ -8,7 +8,12 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.epam.datalayer.data.*;
+import com.epam.datalayer.data.Message;
+import com.epam.datalayer.data.Role;
+import com.epam.datalayer.data.Status;
+import com.epam.datalayer.data.User;
+
+
 
 public class SAXHandlerMessage extends DefaultHandler {
 

@@ -24,7 +24,6 @@ public class ServletFilter implements Filter {
 	private UserDAO userDAO;
 
 	public ServletFilter() {
-
 	}
 
 	public void destroy() {
@@ -38,25 +37,38 @@ public class ServletFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		HttpSession httpSession = httpRequest.getSession();
-		if (!(httpSession.getAttribute("nick") == null)) { //если атрибут ник есть
-			User user = new User(httpSession.getAttribute("nick").toString());
-			//System.out.println("Nick is null");
+		String nick = defineNick(httpSession, httpRequest);
+		if (nick != null) {
+			User user = new User(nick);
 			if (userDAO.isKicked(user)) {
-				System.out.println("user blocked");
-				httpSession.setAttribute("message", "Admin blocked you");
+				System.out.println(nick + " blocked");
+				httpSession.removeAttribute("nick");
+				httpResponse.sendRedirect(
+						httpRequest.getContextPath() + ConfigurationManager.getProperty("path.page.login"));
+				httpSession.setAttribute("message", "User " + nick + " is blocked");
 			} else {
 				System.out.println("User not kicked");
 				httpSession.setAttribute("message", null);
+				chain.doFilter(request, response);
 			}
+		} else {
+			System.out.println("What the fuck?");
+			chain.doFilter(request, response);
 		}
-		//httpSession.setAttribute("nick", null);
-		chain.doFilter(request, response);
+
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
 		factory = DAOFactory.getInstance(DBType.ORACLE);
 		messageDAO = factory.getMessageDAO();
 		userDAO = factory.getUserDAO();
+	}
+
+	private String defineNick(HttpSession httpSession, HttpServletRequest httpRequest) {
+		if (httpSession.getAttribute("nick") != null) {
+			return httpSession.getAttribute("nick").toString();
+		} else
+			return null;
 	}
 
 }

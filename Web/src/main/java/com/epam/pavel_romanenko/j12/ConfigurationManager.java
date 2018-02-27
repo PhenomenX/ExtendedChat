@@ -1,10 +1,11 @@
 package com.epam.pavel_romanenko.j12;
 
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ConfigurationManager {
 	private final static ResourceBundle resourceBundle = ResourceBundle
-			.getBundle("properties.config");
+			.getBundle("properties.config", Locale.ENGLISH);
 
 	private ConfigurationManager() {
 	}
