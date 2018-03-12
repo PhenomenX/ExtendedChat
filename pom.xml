@@ -8,10 +8,10 @@
   	<profile>
   		<id>development</id>
   	</profile>
-  </profiles> 
+  </profiles>
   <modules>
+    <module>Data</module>
   	<module>Web</module>
-  	<module>Data</module>
   </modules>
   <build>
   	<plugins>
@@ -23,29 +23,8 @@
 				<server>TomcatServer</server>
 				<path>/ExtendedChat</path>
 				<port>8083</port>
-			</configuration> 	
+			</configuration>
   		</plugin>
-  		<plugin>
-        	<groupId>sample.plugin</groupId>
-  			<artifactId>first-maven-plugin</artifactId>
-  			<version>0.0.1-SNAPSHOT</version>
-  		 	<executions>
-          		<execution>
-         			<id>exec1</id>
-           			<phase>validate</phase>
-             		<goals>
-             			<goal>timer</goal>
-            		</goals>
-          		</execution>
-          		<execution>
-          			<id>exec2</id>
-            		<phase>compile</phase>
-            		<goals>
-              			<goal>timer</goal>
-           			</goals>
-         		</execution>
-       		</executions> 		
-      	</plugin>
       	<plugin>
         	<groupId>org.apache.maven.plugins</groupId>
         	<artifactId>maven-javadoc-plugin</artifactId>
